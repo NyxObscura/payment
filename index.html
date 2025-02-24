@@ -33,49 +33,47 @@
     <!-- Main Content -->
     <div class="container">
         <header class="main-header">
-            <button class="hamburger-btn" id="openNav">
-                <i class="fas fa-bars"></i>
-            </button>
-            <h1>Payment Portal</h1>
-        </header>
+    <button class="hamburger-btn" id="openNav">
+        <i class="fas fa-bars"></i>
+    </button>
+    <h1 class="payment-title">Payment Portal</h1>
+</header>
 
-        <main class="content">
-            <section class="qr-section" id="qris">
-                <h2>Scan to Pay</h2>
-                <div class="qr-code">
-                    <img src="https://img100.pixhost.to/images/98/533074039_test.jpg" 
-                         alt="QR Code" 
-                         class="qr-image">
-                </div>
-                <p class="instruction">Scan QR code using your preferred payment app</p>
-            </section>
+<section class="payment-methods" id="bank">
+    <h3><i class="fas fa-university"></i> Bank Transfer</h3>
+    <div class="method-card">
+        <div class="copy-container">
+            <p><strong>Sea Bank:</strong> 901154347570</p>
+            <button class="copy-btn" onclick="copyText('901154347570')">Copy</button>
+        </div>
+        <div class="copy-container">
+            <p><strong>BCA:</strong> 2650230232</p>
+            <button class="copy-btn" onclick="copyText('2650230232')">Copy</button>
+        </div>
+        <div class="copy-container">
+            <p><strong>BRI:</strong> Coming Soon</p>
+            <button class="copy-btn" disabled>Copy</button>
+        </div>
+    </div>
+</section>
 
-            <section class="payment-methods" id="bank">
-                <h3><i class="fas fa-university"></i> Bank Transfer</h3>
-                <div class="method-card">
-                    <p><strong>Sea Bank:</strong> 901154347570</p>
-                    <p><strong>BCA:</strong> 2650230232</p>
-                    <p><strong>BRI:</strong> Coming Soon</p>
-                </div>
-            </section>
-
-            <section class="payment-methods" id="ewallet">
-                <h3><i class="fas fa-wallet"></i> E-Wallet</h3>
-                <div class="method-card">
-                    <p><strong>DANA:</strong> 085183343636</p>
-                    <p><strong>GOPAY:</strong> 085183343636</p>
-                    <p><strong>OVO:</strong> 085183343636</p>
-                </div>
-            </section>
-
-            <section class="support-section" id="support">
-                <h3><i class="fas fa-headset"></i> Support</h3>
-                <div class="support-card">
-                    <p>Account name must match: <strong>Obscura Payment</strong></p>
-                    <p>Email: <a href="mailto:support@obscura.web.id">support@obscura.web.id</a></p>
-                    <p>WhatsApp: <a href="https://wa.me/6285183343636">+62 851-8334-3636</a></p>
-                </div>
-            </section>
+<section class="payment-methods" id="ewallet">
+    <h3><i class="fas fa-wallet"></i> E-Wallet</h3>
+    <div class="method-card">
+        <div class="copy-container">
+            <p><strong>DANA:</strong> 085183343636</p>
+            <button class="copy-btn" onclick="copyText('085183343636')">Copy</button>
+        </div>
+        <div class="copy-container">
+            <p><strong>GOPAY:</strong> 085183343636</p>
+            <button class="copy-btn" onclick="copyText('085183343636')">Copy</button>
+        </div>
+        <div class="copy-container">
+            <p><strong>OVO:</strong> 085183343636</p>
+            <button class="copy-btn" onclick="copyText('085183343636')">Copy</button>
+        </div>
+    </div>
+</section>
         </main>
 
         <footer class="main-footer">
@@ -143,6 +141,13 @@
                 lightbox.style.display = 'none';
             }
         });
+        function copyText(text) {
+    navigator.clipboard.writeText(text).then(() => {
+        alert("Copied: " + text);
+    }).catch(err => {
+        console.error("Failed to copy text: ", err);
+    });
+}
     </script>
 </body>
 </html>

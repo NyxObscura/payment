@@ -1,8 +1,9 @@
+
 :root {
     --primary-color: #2563eb;
     --secondary-color: #1e40af;
-    --background-color: #272822;
-    --text-color: #f8f8f2;
+    --background-color: #272822; /* Updated background color */
+    --text-color: #f8f8f2; /* Updated text color for better contrast */
     --border-color: #cbd5e1;
     --shadow-color: rgba(0, 0, 0, 0.1);
 }
@@ -78,10 +79,15 @@ body {
 }
 
 /* Main Content */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
 .main-header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     margin-bottom: 2rem;
 }
 
@@ -90,23 +96,30 @@ body {
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
+    margin-right: 1rem;
     color: var(--text-color);
 }
-
-.payment-title {
-    flex-grow: 1;
-    text-align: center;
-}
-
 @media (min-width: 768px) {
     .main-header {
-        justify-content: start;
+        justify-content: flex-start;
+        padding-left: 60px; /* Memberikan ruang untuk tombol hamburger */
     }
 
-    .payment-title {
-        text-align: right;
-        margin-left: auto;
-        padding-right: 2rem;
+    .hamburger-btn {
+        position: fixed;
+        left: 1rem;
+        top: 1rem;
+    }
+
+    .main-header h1 {
+        margin-left: 2rem; /* Memberikan jarak antara tombol hamburger dan teks "Payment Portal" */
+    }
+}
+@media (min-width: 768px) {
+    .hamburger-btn {
+        position: fixed; /* Position hamburger button to the left on desktop */
+        left: 1rem;
+        top: 1rem;
     }
 }
 
@@ -148,36 +161,15 @@ body {
     }
 
     .method-card {
-        width: 100%;
+        margin-top: 0;
     }
 }
-
-/* Tombol Copy */
-.copy-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #1e1e1e;
-    padding: 10px;
-    border-radius: 5px;
-    margin-top: 10px;
-}
-
-.copy-container p {
-    margin: 0;
-}
-
-.copy-btn {
-    background: var(--primary-color);
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.copy-btn:hover {
-    background: var(--secondary-color);
+.support-card {
+    background: #1e1e1e; /* Darker background for cards */
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px var(--shadow-color);
+    margin-top: 1rem;
 }
 
 .instruction {
@@ -240,4 +232,27 @@ body {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
     }
+}
+.copy-btn {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    cursor: pointer;
+    margin-left: 0.5rem;
+}
+
+.copy-btn:hover {
+    color: var(--secondary-color);
+}
+#bank, #ewallet {
+    background: #1e1e1e;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+#support {
+    background: #1e1e1e;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
 }

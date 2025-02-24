@@ -1,8 +1,8 @@
 :root {
     --primary-color: #2563eb;
     --secondary-color: #1e40af;
-    --background-color: #f8fafc;
-    --text-color: #1e293b;
+    --background-color: #272822; /* Updated background color */
+    --text-color: #f8f8f2; /* Updated text color for better contrast */
     --border-color: #cbd5e1;
     --shadow-color: rgba(0, 0, 0, 0.1);
 }
@@ -27,7 +27,7 @@ body {
     top: 0;
     width: 250px;
     height: 100%;
-    background: white;
+    background: #1e1e1e; /* Darker background for side nav */
     box-shadow: 2px 0 5px var(--shadow-color);
     transition: 0.3s;
     z-index: 1000;
@@ -69,7 +69,7 @@ body {
 }
 
 .nav-list li a:hover {
-    background-color: #f1f5f9;
+    background-color: #333; /* Darker hover background */
 }
 
 .nav-list li a i {
@@ -99,6 +99,14 @@ body {
     color: var(--text-color);
 }
 
+@media (min-width: 768px) {
+    .hamburger-btn {
+        position: fixed; /* Position hamburger button to the left on desktop */
+        left: 1rem;
+        top: 1rem;
+    }
+}
+
 .qr-section {
     text-align: center;
     margin-bottom: 2rem;
@@ -122,7 +130,7 @@ body {
 }
 
 .method-card {
-    background: white;
+    background: #1e1e1e; /* Darker background for cards */
     padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 2px 4px var(--shadow-color);
@@ -130,7 +138,7 @@ body {
 }
 
 .support-card {
-    background: white;
+    background: #1e1e1e; /* Darker background for cards */
     padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 2px 4px var(--shadow-color);
